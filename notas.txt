@@ -1,0 +1,15 @@
+Instalacion de typescript de manera global
+    -   npm install -g typescript
+    -   Compobamos que se instalo bien con tsc --version o -v
+
+Transpilar ts a js
+    -  (Por arhivo) Ejecutar tsc [nombre_del_archivo].ts y va a generar un archivo con su version en .js
+    -  (Todos los archivos) tsc
+
+Generar y configurar el archivo tsconfig.json
+    -   Ejecutar tsc --init para generar el archivo 
+    -   En este archivo vienen las configuraciones comentadas y al ir descomentando typescript se va haciendo mas estricto 
+
+Watch Mode
+    -   Sirve para transpilar de manera automatica cuando se detecta que un archivo ts tiene un cambio
+    -   Ejecutar tsc --watch o -w
