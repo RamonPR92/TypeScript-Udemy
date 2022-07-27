@@ -13,3 +13,4 @@ Generar y configurar el archivo tsconfig.json
 Watch Mode
     -   Sirve para transpilar de manera automatica cuando se detecta que un archivo ts tiene un cambio
     -   Ejecutar tsc --watch o -w
+ 
