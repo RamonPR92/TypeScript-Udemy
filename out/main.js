@@ -1,137 +1,125 @@
 "use strict";
 (() => {
-    const fullName = (firstName, lastName, upper = true) => {
-        if (upper) {
-            return `${firstName.toUpperCase()} ${lastName === null || lastName === void 0 ? void 0 : lastName.toUpperCase()}`;
+    class Avenger {
+        constructor(name, team, realName) {
+            this.name = name;
+            this.team = team;
+            this.realName = realName;
         }
-        else {
-            return `${firstName} ${lastName}`;
-        }
-    };
-    console.log(fullName('Ramon'));
-})();
-(() => {
-    const fullName = (firstName, lastName) => {
-        return `${firstName}  ${lastName}`;
-    };
-    console.log(fullName('Ramon', 'Perez'));
-})();
-(() => {
-    const fullName = (firstName, lastName) => {
-        return `${firstName} ${lastName}`;
-    };
-    console.log(fullName('Ramon'));
-})();
-(() => {
-    const fullName = (firstName, ...args) => {
-        let result = '';
-        args.forEach(element => {
-            result += `${element} `;
-        });
-        return `${firstName} ${result}`;
-    };
-    console.log(fullName('Ramon', 'Perez', 'Rodriguez', 'De la O'));
-})();
-(() => {
-    const addNumbers = (a, b) => a + b;
-    const greet = (name) => ` Hola ${name}`;
-    const saveTheWorld = () => `Salvando al mundo`;
-    let myFunctionNumer;
-    myFunctionNumer = addNumbers;
-    console.log(myFunctionNumer(1, 2));
-    let myFunctionString;
-    myFunctionString = greet;
-    console.log(myFunctionString('Ramon'));
-    let myFunction;
-    myFunction = saveTheWorld;
-    console.log(myFunction());
-})();
-(() => {
-    const hero = 'flash';
-    function returnName() {
-        return hero;
     }
-    const activate = () => {
-        return 'activate';
-    };
-    console.log(typeof activate);
-})();
-const mensaje = 'Hola mundo';
-console.log(mensaje);
-const hero = { name: 'ironman', edad: 34 };
-hero.edad = 50;
-console.log(hero.edad);
-(() => {
-    let avenger = 123;
-    let power;
-    avenger = 'superman';
-    console.log(avenger.toUpperCase());
-    avenger = 2132.2312;
-    console.log(avenger.toFixed(2));
-})();
-(() => {
-    const varios = [1, 2, 3, 4, 5, 6, 7, '4'];
-    varios.push(true);
-    console.log(varios);
-    const numbers = [1, 2, 3, 34, 45];
-    numbers.push(32);
-    console.log(numbers);
-})();
-(() => {
-    let esBatman = true;
-    console.log(esBatman);
-})();
-(() => {
-    let Volumen;
-    (function (Volumen) {
-        Volumen[Volumen["BAJO"] = 5] = "BAJO";
-        Volumen[Volumen["MEDIO"] = 10] = "MEDIO";
-        Volumen[Volumen["ALTO"] = 15] = "ALTO";
-    })(Volumen || (Volumen = {}));
-    ;
-    let currentAudio = Volumen.BAJO;
-    console.log(currentAudio);
-})();
-(() => {
-    const error = (message) => {
-        if (message.length > 0) {
-            return true;
+    Avenger.avgAge = 35;
+    class AvengerTwo {
+        constructor(name, team, realName) {
+            this.name = name;
+            this.team = team;
+            this.realName = realName;
         }
-        else {
-            throw new Error(message);
+        bio() {
+            return `${this.name} - ${this.team}`;
         }
-    };
-    console.log(error(''));
-})();
-(() => {
-    let nada = undefined;
-    console.log(nada);
-})();
-let villians = 20;
-let avengers = 10;
-if (villians >= avengers) {
-    console.log('Valio barriga');
-}
-else {
-    console.log('Estamos salvados');
-}
-(() => {
-    var _a;
-    const batman = 'Batman';
-    const superman = "Superman's";
-    const gatubela = `Gatubela`;
-    console.log(batman.toUpperCase());
-    console.log(superman.toLowerCase());
-    console.log(gatubela.repeat(2));
-    console.log(((_a = batman[10]) === null || _a === void 0 ? void 0 : _a.toLowerCase()) || 'No hay letra en la posicion 10');
-})();
-(() => {
-    const hero = ['doctor strange', 100];
-})();
-(() => {
-    function callBatman() {
+        static getAvg() {
+            return this.name;
+        }
     }
-    const a = callBatman();
-    console.log(a);
+    AvengerTwo.avgAge = 35;
+    const antMan = new Avenger('AntMan', 'Rojo', 'Hormiga');
+    console.log(antMan);
+    const antManDos = new AvengerTwo('AntManDos', 'azul', 'Hormiga');
+    console.log(antManDos);
+    console.log(AvengerTwo.getAvg());
+})();
+(() => {
+    class Device {
+        constructor(name, port) {
+            this.name = name;
+            this.port = port;
+        }
+        get getNombre() {
+            return this.name;
+        }
+    }
+    class Lector extends Device {
+        constructor(name, port, version) {
+            super(name, port);
+            this.version = version;
+        }
+        leer() {
+            console.log(`Leyendo ... ${this.version}`);
+        }
+    }
+    class Monedero extends Device {
+        aceptarMoneda() {
+            console.log('AceptarMoneda');
+        }
+    }
+    const lectorVenta = new Lector('Lector', 'ttyS01', '0002');
+    lectorVenta.leer();
+    const monedero = new Monedero('Monedero', 'ttyS01');
+    monedero.aceptarMoneda();
+    const funcion = (dispositivo) => {
+        console.log(dispositivo.getNombre);
+    };
+    funcion(lectorVenta);
+    funcion(monedero);
+})();
+(() => {
+    class Figura {
+        constructor(ancho, alto) {
+            this.ancho = ancho;
+            this.alto = alto;
+        }
+        get getAncho() {
+            return this.ancho;
+        }
+        get getAlto() {
+            return this.alto;
+        }
+        set setAncho(ancho) {
+            this.ancho = ancho;
+        }
+        set setAlto(alto) {
+            this.alto = alto;
+        }
+    }
+    const figura = new Figura(5, 10);
+    console.log(figura.getAlto);
+    figura.setAlto = 45;
+    console.log(figura.getAlto);
+})();
+(() => {
+    class Father {
+        constructor(name, realName) {
+            this.name = name;
+            this.realName = realName;
+        }
+        getFullName() {
+            return `${this.name} - ${this.realName}`;
+        }
+    }
+    class Son extends Father {
+        constructor(name, realName, esPlaneado) {
+            super(name, realName);
+            this.esPlaneado = esPlaneado;
+        }
+        getFullName() {
+            return `${this.name} - ${this.realName} - ${this.esPlaneado}`;
+        }
+    }
+    const hijo = new Son('Ramon', 'Locote', false);
+    console.log(hijo.getFullName());
+    const padre = new Father('Padre', 'Locote');
+})();
+(() => {
+    class Heroe {
+        constructor() { }
+        static getHeroe() {
+            if (!this.heroe) {
+                this.heroe = new Heroe();
+            }
+            return this.heroe;
+        }
+    }
+    const aquaman = Heroe.getHeroe();
+    console.log(aquaman);
 })();
 //# sourceMappingURL=main.js.map

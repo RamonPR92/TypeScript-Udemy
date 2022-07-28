@@ -103,9 +103,9 @@
   "exclude": [
     //Excluye de la compilacion los archivos con terminacion .ts que esten dentro de la carpeta objetos 
     "objetos/*.ts"
-   ]
+   ],
    //Lo que se incluye en la transpilacion
-   //, "include": [
-  //   ""
-  // ]
+   "include": [
+      "clases"
+   ]
 }
