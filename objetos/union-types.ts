@@ -18,4 +18,5 @@
     }
 
     console.log(custom);
+    console.log(custom);
 })();
