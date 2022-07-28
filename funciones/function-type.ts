@@ -2,16 +2,22 @@
 
     const addNumbers = (a:number, b:number) => a + b;
     const greet = (name:string) => ` Hola ${name}`;
-    const saveTheWorld = (name:string) => `Salvando al mundo`;
+    const saveTheWorld = () => `Salvando al mundo`;
 
-    let myFunction: Function;
+    //Es de tipo funcion pero con cualquier firma seria aceptada
+    // let myFunction: Function;
 
-    myFunction = addNumbers;
-    console.log(myFunction(1, 2));
+    //Es una variable de tipo funcion pero debe de cumplir con la firma
+    let myFunctionNumer: (x:number, y:number) => number;
 
-    myFunction = greet;
-    console.log(myFunction('Ramon'));
+    myFunctionNumer = addNumbers;
+    console.log(myFunctionNumer(1, 2));
 
+    let myFunctionString: (s:string) => string;
+    myFunctionString = greet;
+    console.log(myFunctionString('Ramon'));
+
+    let myFunction: () => string;
     myFunction = saveTheWorld;
     console.log(myFunction());
     
