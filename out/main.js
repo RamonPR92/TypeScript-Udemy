@@ -1,44 +1,13 @@
 "use strict";
-(() => {
-    class Pato {
-        volar() {
-            return '';
-        }
-    }
-})();
-(() => {
-    const cliente = {
-        name: 'Ramon',
-        age: 30,
-        address: {
-            id: 2,
-            zip: '45234',
-            city: 'Zapopan'
-        },
-        getFullAddress(id) {
-            return `Es el id: ${id}`;
-        },
+var Validations;
+(function (Validations) {
+    Validations.validateText = (text) => {
+        return text.length > 3;
     };
-    const funcion = (cliente) => {
-        cliente.getFullAddress('09d');
+    Validations.validateDate = (fecha) => {
+        return fecha.getMonth() == 8;
     };
-})();
-(() => {
-    const sumar = (a, b) => {
-        return a + b;
-    };
-    const restar = (a, b) => {
-        return a - b;
-    };
-    const multiplicar = (a, b) => {
-        return a * b;
-    };
-    const dividir = (a, b) => {
-        return a / b;
-    };
-    console.log(sumar(1, 5));
-    console.log(restar(1, 5));
-    console.log(multiplicar(1, 5));
-    console.log(dividir(1, 5));
-})();
+})(Validations || (Validations = {}));
+console.log(Validations.validateText('Ramon'));
+console.log(Validations.validateDate(new Date(2022, 7, 28)));
 //# sourceMappingURL=main.js.map

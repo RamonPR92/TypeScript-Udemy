@@ -106,6 +106,6 @@
    ],
    //Lo que se incluye en la transpilacion
    "include": [
-      "interfaces"
+      "namespaces"
    ]
 }
